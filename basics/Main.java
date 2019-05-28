@@ -3,9 +3,9 @@ import java.time.format.DateTimeFormatter;
 
 public class Main {
     public static void main(String[] args) {
-        //int itemCount = 10;
-        //System.out.println("I own " + itemCount + " " + pluralize("dog", itemCount) + ".");
-        //flipNHeads(3);
+        int itemCount = 10;
+        System.out.println("I own " + itemCount + " " + pluralize("dog", itemCount) + ".");
+        flipNHeads(3);
         clock();
     }
 
