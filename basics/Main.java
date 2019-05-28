@@ -1,3 +1,6 @@
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 public class Main {
     public static void main(String[] args) {
         //int itemCount = 10;
@@ -34,7 +37,15 @@ public class Main {
     }
 
     public static void clock() {
-
+        LocalDateTime previousSecond = LocalDateTime.now();
+        while(true){
+            LocalDateTime current = LocalDateTime.now();
+            if(previousSecond.getSecond() != current.getSecond()){
+                String time = current.format(DateTimeFormatter.ofPattern("HH:mm:ss"));
+                System.out.println(time);
+                previousSecond = current;
+            }
+        }
     }
 }
 
