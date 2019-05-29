@@ -11,4 +11,19 @@ public class LibraryTest {
         Library classUnderTest = new Library();
         assertTrue("someLibraryMethod should return 'true'", classUnderTest.someLibraryMethod());
     }
+    //roll
+    @Test public void testRollThree(){
+        Library classUnderTest = new Library();
+        assertTrue("testRollThree should return 'true'",classUnderTest.roll(3).length == 3);
+    }
+    @Test public void testRollNumbers(){
+        Library classUnderTest = new Library();
+        int[] testArray = classUnderTest.roll(5);
+        for(int i = 0; i < testArray.length; i++){
+            assertTrue("test_roll_numbers should return 'true'", 0 < testArray[i] && testArray[i] < 7);
+        }
+    }
+    //duplicate
+    //average
+    //2dArr
 }
