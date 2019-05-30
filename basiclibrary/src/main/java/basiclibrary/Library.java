@@ -1,9 +1,6 @@
 package basiclibrary;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Random;
+import java.util.*;
 
 public class Library {
     public boolean someLibraryMethod() {
@@ -53,6 +50,25 @@ public class Library {
             }
         }
         return lowAvgArray;
+    }
+
+    public String analyzeWeather(int[][] data){
+        Set<Integer> tempValues = new HashSet<>();
+        //populate
+        for (int[] arr: data) {
+            for (int temp: arr) tempValues.add(temp);
+        }
+        int high = Collections.max(tempValues);
+        int low = Collections.min(tempValues);
+
+        String output = String.format("High: %d\nLow: %d", high, low);
+
+        for (int i = low; i < high; i++) {
+            if (!tempValues.contains(i)) {
+                output += String.format("\nNever saw temperature: %d", i);
+            }
+        }
+        return output;
     }
 
 

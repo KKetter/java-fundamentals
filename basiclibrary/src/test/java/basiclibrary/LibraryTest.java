@@ -77,6 +77,9 @@ public class LibraryTest {
         Library classUnderTest = new Library();
         assertTrue("testEmptyTwoDArrayAvg should return 'null'",classUnderTest.twoDArrAvg(new int[][]{}) == null);
     }
+    //weather
+
+    //election
 
 }
 
