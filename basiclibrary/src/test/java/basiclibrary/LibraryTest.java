@@ -7,6 +7,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class LibraryTest {
+
     @Test public void testSomeLibraryMethod() {
         Library classUnderTest = new Library();
         assertTrue("someLibraryMethod should return 'true'", classUnderTest.someLibraryMethod());
@@ -16,14 +17,66 @@ public class LibraryTest {
         Library classUnderTest = new Library();
         assertTrue("testRollThree should return 'true'",classUnderTest.roll(3).length == 3);
     }
-    @Test public void testRollNumbers(){
+
+    @Test public void testRollNumbers() {
         Library classUnderTest = new Library();
         int[] testArray = classUnderTest.roll(5);
-        for(int i = 0; i < testArray.length; i++){
-            assertTrue("test_roll_numbers should return 'true'", 0 < testArray[i] && testArray[i] < 7);
+        for (int i = 0; i < testArray.length; i++) {
+            assertTrue("testRollNumbers should return 'true'", 0 < testArray[i] && testArray[i] < 7);
         }
     }
     //duplicate
-    //average
+    @Test public void testTrueDuplicate() {
+        Library classUnderTest = new Library();
+        assertTrue("testTrueDuplicate should return 'true'", classUnderTest.containsDuplicates(new int[] {1,2,3,4,5,6,2}));
+    }
+
+    @Test public void testFalseDuplicate() {
+        Library classUnderTest = new Library();
+        assertFalse("testTrueDuplicate should return 'false'", classUnderTest.containsDuplicates(new int[] {1,2,3,4,5,6}));
+    }
+
+    @Test public void testEmptyDuplicateArr() {
+        Library classUnderTest = new Library();
+        assertFalse("testTrueDuplicate should return 'true'", classUnderTest.containsDuplicates(new int[] {}));
+    }
+    //arrAverage
+    @Test
+    public void testTrueArrayAverage(){
+        Library classUnderTest = new Library();
+        assertTrue("testTrueArrayAverage should return '3.0'", classUnderTest.arrayAverage(new int[] {1,2,3,4,5}) == 3.0);
+    }
+
+    @Test
+    public void testFalseArrayAverage(){
+        Library classUnderTest = new Library();
+        assertFalse("testTrueArrayAverage should return '3.0' and is supposed to fail", classUnderTest.arrayAverage(new int[] {1,2,3,4,5}) == 2.0);
+    }
+
+    @Test
+    public void testEmptyArrayAverage(){
+        Library classUnderTest = new Library();
+        assertTrue("testTrueArrayAverage should return '0.0'", classUnderTest.arrayAverage(new int[] {}) == 0.0);
+    }
+
     //2dArr
+    @Test
+    public void testEqualsTwoDArrAvg(){
+        int[][] weeklyMonthTemperatures = {
+                {66, 64, 58, 65, 71, 57, 60},
+                {57, 65, 65, 70, 72, 65, 51},
+                {55, 54, 60, 53, 59, 57, 61},
+                {65, 56, 55, 52, 55, 62, 57}
+        };
+        Library classUnderTest = new Library();
+        assertArrayEquals(classUnderTest.twoDArrAvg(weeklyMonthTemperatures), new int[] {55, 54, 60, 53, 59, 57, 61});
+    }
+
+    @Test
+    public void testEmptyTwoDArrayAvg(){
+        Library classUnderTest = new Library();
+        assertTrue("testEmptyTwoDArrayAvg should return 'null'",classUnderTest.twoDArrAvg(new int[][]{}) == null);
+    }
+
 }
+
