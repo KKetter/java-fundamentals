@@ -1,6 +1,8 @@
 package basiclibrary;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 
 public class Library {
@@ -18,5 +20,40 @@ public class Library {
         return rollResultArr;
     }
 
-    public int
+    public boolean containsDuplicates(int[] valuesArray){
+        Map <Integer, Integer> map = new HashMap<>();
+        for(int i = 0; i < valuesArray.length; i++){
+            if(map.containsKey(valuesArray[i])){
+                return true;
+            }else{
+                map.put(valuesArray[i],1);
+            }
+        }
+        return false;
+    }
+
+    public float arrayAverage(int[] valuesArray) {
+        if(valuesArray.length == 0) return 0;
+        float total = 0;
+        for (int i = 0; i < valuesArray.length; i++){
+            total += valuesArray[i];
+        }
+        return (total/valuesArray.length);
+    }
+
+    public int[] twoDArrAvg(int[][] valuesArray){
+        if(valuesArray.length == 0) return null;
+        int[] lowAvgArray = valuesArray[0];
+        double lowAverage = arrayAverage(valuesArray[0]);
+        for(int i = 1; i < valuesArray.length; i++){
+            double curLowAverage = arrayAverage(valuesArray[i]);
+            if(curLowAverage< lowAverage){
+                lowAverage = curLowAverage;
+                lowAvgArray = valuesArray[i];
+            }
+        }
+        return lowAvgArray;
+    }
+
+
 }
