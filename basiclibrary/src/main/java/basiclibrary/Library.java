@@ -71,5 +71,26 @@ public class Library {
         return output;
     }
 
+    public String tally(List<String> votes){
+        int voteLeader = 0;
+        String winner = "";
+        Map<String, Integer> candidateFrequency = new HashMap<>();
+        for(String candidate: votes){
+            int freq = 1;
+            if(candidateFrequency.containsKey(candidate)){
+                freq = candidateFrequency.get(candidate) + 1;
+                candidateFrequency.put(candidate,freq);
+            }
+            else{
+                candidateFrequency.put(candidate, freq);
+            }
+            if (voteLeader < freq){
+                voteLeader = freq;
+                winner = candidate;
+            }
+        }
+        return winner;
+    }
+
 
 }

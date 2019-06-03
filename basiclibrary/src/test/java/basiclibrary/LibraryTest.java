@@ -4,6 +4,9 @@
 package basiclibrary;
 
 import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.List;
 import static org.junit.Assert.*;
 
 public class LibraryTest {
@@ -78,8 +81,50 @@ public class LibraryTest {
         assertTrue("testEmptyTwoDArrayAvg should return 'null'",classUnderTest.twoDArrAvg(new int[][]{}) == null);
     }
     //weather
+    @Test
+    public void testWeather(){
+        int[][] weeklyMonthTemperatures = {
+                {66, 64, 58, 65, 71, 57, 60},
+                {57, 65, 65, 70, 72, 65, 51},
+                {55, 54, 60, 53, 59, 57, 61},
+                {65, 56, 55, 52, 55, 62, 57}
+        };
+        String compareResult = "High: 72\n" +
+                "Low: 51\n" +
+                "Never saw temperature: 63\n" +
+                "Never saw temperature: 67\n" +
+                "Never saw temperature: 68\n" +
+                "Never saw temperature: 69";
+        Library classUnderTest = new Library();
+        System.out.println(classUnderTest.analyzeWeather(weeklyMonthTemperatures));
+        assertEquals(classUnderTest.analyzeWeather(weeklyMonthTemperatures), compareResult);
+    }
 
+    @Test
+    public void testEmptyAnalyzeWeatherData(){
+        int[][] weeklyMonthTemperatures = {};
+        String compareResult = "";
+        Library classUnderTest = new Library();
+        assertEquals(classUnderTest.analyzeWeather(weeklyMonthTemperatures), compareResult);
+    }
     //election
+    @Test
+    public void testEqualsTally(){
+        List<String> votes = new ArrayList<>();
+        votes.add("Bush");
+        votes.add("Bush");
+        votes.add("Bush");
+        votes.add("Shrub");
+        votes.add("Hedge");
+        votes.add("Shrub");
+        votes.add("Bush");
+        votes.add("Hedge");
+        votes.add("Bush");
+        Library classUnderTest = new Library();
+        String winner = classUnderTest.tally(votes);
+        assertEquals("Bush", winner);
+        assertNotEquals("Shrub", winner);
+    }
 
 }
 
