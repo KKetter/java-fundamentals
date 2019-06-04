@@ -8,10 +8,79 @@
 - [Lab 6 - Composition/Inheritance](https://github.com/KKetter/java-fundamentals/tree/master/inheritance/src/main/java/inheritance)
 
 ## Library Architecture
-- java-fundamentals
-    - > basic library
-        - > 
-    - > basics
-         - > 
-    - > inheritance
-         - > 
+```
+├─java-fundamentals
+├── LICENSE
+├── README.md
+├── basiclibrary
+│   ├── build.gradle
+│   ├── gradle
+│   │   └── wrapper
+│   │       ├── gradle-wrapper.jar
+│   │       └── gradle-wrapper.properties
+│   ├── gradlew
+│   ├── gradlew.bat
+│   ├── out
+│   │   ├── production
+│   │   │   └── classes
+│   │   │       └── basiclibrary
+│   │   │           └── Library.class
+│   │   └── test
+│   │       └── classes
+│   │           ├── META-INF
+│   │           │   └── basiclibrary.main.kotlin_module
+│   │           └── basiclibrary
+│   │               └── LibraryTest.class
+│   ├── settings.gradle
+│   └── src
+│       ├── main
+│       │   ├── java
+│       │   │   └── basiclibrary
+│       │   │       └── Library.java
+│       │   └── resources
+│       └── test
+│           ├── java
+│           │   └── basiclibrary
+│           │       └── LibraryTest.java
+│           └── resources
+├── basics
+│   ├── Main.class
+│   └── Main.java
+└── inheritance
+    ├── build.gradle
+    ├── gradle
+    │   └── wrapper
+    │       ├── gradle-wrapper.jar
+    │       └── gradle-wrapper.properties
+    ├── gradlew
+    ├── gradlew.bat
+    ├── out
+    │   ├── production
+    │   │   └── classes
+    │   │       └── inheritance
+    │   │           ├── Library.class
+    │   │           ├── Restaurant.class
+    │   │           └── Review.class
+    │   └── test
+    │       └── classes
+    │           └── inheritance
+    │               ├── LibraryTest.class
+    │               ├── RestaurantTest.class
+    │               └── ReviewTest.class
+    ├── settings.gradle
+    └── src
+        ├── main
+        │   ├── java
+        │   │   └── inheritance
+        │   │       ├── Library.java
+        │   │       ├── Restaurant.java
+        │   │       └── Review.java
+        │   └── resources
+        └── test
+            ├── java
+            │   └── inheritance
+            │       ├── LibraryTest.java
+            │       ├── RestaurantTest.java
+            │       └── ReviewTest.java
+            └── resources
+```
