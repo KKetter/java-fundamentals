@@ -6,3 +6,12 @@
 - [Lab 3 - Weather, Election map ](https://github.com/KKetter/java-fundamentals/blob/Lab03/basiclibrary/src/main/java/basiclibrary/Library.java)
 - [Lab 3 - Linter]()
 - [Lab 6 - Composition/Inheritance](https://github.com/KKetter/java-fundamentals/tree/master/inheritance/src/main/java/inheritance)
+
+## Library Architecture
+- java-fundamentals
+    - > basic library
+        - > 
+    - > basics
+         - > 
+    - > inheritance
+         - > 
