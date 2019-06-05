@@ -3,7 +3,6 @@ package inheritance;
 public class Review {
     private String author;
     private String body;
-    //Again out of 3 because our reviewers love the michelin man
     private int stars;
 
 

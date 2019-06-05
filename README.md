@@ -6,10 +6,11 @@
 - [Lab 3 - Weather, Election map ](https://github.com/KKetter/java-fundamentals/blob/Lab03/basiclibrary/src/main/java/basiclibrary/Library.java)
 - [Lab 3 - Linter]()
 - [Lab 6 - Composition/Inheritance](https://github.com/KKetter/java-fundamentals/tree/master/inheritance/src/main/java/inheritance)
+- [Lab 7 - Inheritance](https://github.com/KKetter/java-fundamentals/tree/master/inheritance/src/main/java/inheritance)
 
 ## Library Architecture
 ```
-├─java-fundamentals
+.
 ├── LICENSE
 ├── README.md
 ├── basiclibrary
@@ -60,13 +61,17 @@
     │   │       └── inheritance
     │   │           ├── Library.class
     │   │           ├── Restaurant.class
-    │   │           └── Review.class
+    │   │           ├── Review.class
+    │   │           ├── Shop.class
+    │   │           └── Theatre.class
     │   └── test
     │       └── classes
     │           └── inheritance
     │               ├── LibraryTest.class
     │               ├── RestaurantTest.class
-    │               └── ReviewTest.class
+    │               ├── ReviewTest.class
+    │               ├── ShopTest.class
+    │               └── TheatreTest.class
     ├── settings.gradle
     └── src
         ├── main
@@ -74,13 +79,18 @@
         │   │   └── inheritance
         │   │       ├── Library.java
         │   │       ├── Restaurant.java
-        │   │       └── Review.java
+        │   │       ├── Review.java
+        │   │       ├── Shop.java
+        │   │       └── Theatre.java
         │   └── resources
         └── test
             ├── java
             │   └── inheritance
             │       ├── LibraryTest.java
             │       ├── RestaurantTest.java
-            │       └── ReviewTest.java
+            │       ├── ReviewTest.java
+            │       ├── ShopTest.java
+            │       └── TheatreTest.java
             └── resources
+
 ```
