@@ -13,7 +13,7 @@ public class RestaurantTest {
     public void constructorTest() {
         List<Review> wow = new ArrayList<>();
         wow.add(new Review("SpeakToTheManager Haircut", "it needs less spice", 0));
-        Restaurant potato = new Restaurant("Shenanigans", 2, "$", wow);
+        Restaurant potato = new Restaurant("Shenanigans", 2, "$");
         assertEquals("Shenanigans", potato.getName());
 
     }
@@ -22,7 +22,26 @@ public class RestaurantTest {
     public void toString1() {
         List<Review> wow = new ArrayList<>();
         wow.add(new Review("SpeakToTheManager Haircut", "it needs less spice", 0));
-        Restaurant potato = new Restaurant("Shenanigans", 2, "$", wow);
-        assertEquals("The restaurant Shenanigans with 2 stars and costs $ out of $$$$", potato.toString());
+        Restaurant potato = new Restaurant("Shenanigans", 2, "$");
+        assertEquals("The restaurant Shenanigans with 2.000000 stars and costs $ out of $$$$", potato.toString());
+    }
+
+    @Test
+    public void getStars() {
+    }
+
+    @Test
+    public void addReview() {
+        List<Review> wow = new ArrayList<>();
+        Review testReview = new Review("SpeakToTheManager Haircut", "it needs less spice", 3);
+        Review testReview2 = new Review("SpeakToTheManager2 Haircut", "it needs less spice", 1);
+        Restaurant potato = new Restaurant("Shenanigans", 2, "$");
+        wow.add(testReview2);
+        wow.add(testReview);
+        potato.addReview(testReview2);
+        potato.addReview(testReview);
+        assertEquals(wow, potato.getReviews());
+        assertEquals(2.0,potato.getStars(), 0);
+
     }
 }
